@@ -1,0 +1,711 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D7818B424A5A32E0060881B /* SigninsPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7818B324A5A32E0060881B /* SigninsPayload.swift */; };
+		1D7818B624A5A3C50060881B /* SigninsResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7818B524A5A3C50060881B /* SigninsResult.swift */; };
+		1D7CFC3524A3C5210009AF5C /* ManualEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7CFC3424A3C5210009AF5C /* ManualEntryViewController.swift */; };
+		1D7CFC3724A3C53C0009AF5C /* ManualEntryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D7CFC3624A3C53C0009AF5C /* ManualEntryViewController.xib */; };
+		1D7CFC3F24A3F14E0009AF5C /* LogoutPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7CFC3E24A3F14E0009AF5C /* LogoutPayload.swift */; };
+		1D7CFC4124A412560009AF5C /* ScanResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7CFC4024A412560009AF5C /* ScanResult.swift */; };
+		1D7CFC4324A5327A0009AF5C /* SessionEntriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7CFC4224A5327A0009AF5C /* SessionEntriesTableViewController.swift */; };
+		1D7CFC4524A537F00009AF5C /* PayloadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7CFC4424A537F00009AF5C /* PayloadCell.swift */; };
+		1D80918B24A39EB0003FD6EC /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D80918A24A39EB0003FD6EC /* Storage.swift */; };
+		1D80919B24A3B1D8003FD6EC /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D80919A24A3B1D8003FD6EC /* AccountViewController.swift */; };
+		1D80919D24A3B3C9003FD6EC /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D80919C24A3B3C9003FD6EC /* ListViewController.swift */; };
+		1D8091A024A3B846003FD6EC /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D80919F24A3B846003FD6EC /* ScannerViewController.swift */; };
+		1D9FB93F24A2641800010370 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FB93E24A2641800010370 /* AppDelegate.swift */; };
+		1D9FB94124A2641800010370 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FB94024A2641800010370 /* SceneDelegate.swift */; };
+		1D9FB94324A2641800010370 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FB94224A2641800010370 /* ViewController.swift */; };
+		1D9FB94624A2641800010370 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D9FB94424A2641800010370 /* Main.storyboard */; };
+		1D9FB94824A2641A00010370 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D9FB94724A2641A00010370 /* Assets.xcassets */; };
+		1D9FB94B24A2641A00010370 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D9FB94924A2641A00010370 /* LaunchScreen.storyboard */; };
+		1D9FB95624A2641B00010370 /* MasjidSigninTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FB95524A2641B00010370 /* MasjidSigninTests.swift */; };
+		1D9FB96124A2641B00010370 /* MasjidSigninUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FB96024A2641B00010370 /* MasjidSigninUITests.swift */; };
+		1D9FB97024A2BF9200010370 /* LoginPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FB96F24A2BF9200010370 /* LoginPayload.swift */; };
+		1D9FB97424A2C14A00010370 /* CurrentSignins.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FB97324A2C14A00010370 /* CurrentSignins.swift */; };
+		1D9FB97624A2C4C900010370 /* InPersonSigninPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FB97524A2C4C900010370 /* InPersonSigninPayload.swift */; };
+		1D9FB97924A2D38E00010370 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FB97824A2D38E00010370 /* Network.swift */; };
+		1D9FB97A24A311CF00010370 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FB97824A2D38E00010370 /* Network.swift */; };
+		1D9FB97C24A3135800010370 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FB97B24A3135800010370 /* LoginResponse.swift */; };
+		1D9FB97F24A3149A00010370 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FB97E24A3149A00010370 /* Keychain.swift */; };
+		1D9FB98124A3153B00010370 /* KeychainConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FB98024A3153B00010370 /* KeychainConfiguration.swift */; };
+		1D9FB98324A3156300010370 /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FB98224A3156300010370 /* KeychainPasswordItem.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1D9FB95224A2641B00010370 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1D9FB93324A2641800010370 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1D9FB93A24A2641800010370;
+			remoteInfo = MasjidSignin;
+		};
+		1D9FB95D24A2641B00010370 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1D9FB93324A2641800010370 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1D9FB93A24A2641800010370;
+			remoteInfo = MasjidSignin;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1D7818B324A5A32E0060881B /* SigninsPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninsPayload.swift; sourceTree = "<group>"; };
+		1D7818B524A5A3C50060881B /* SigninsResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninsResult.swift; sourceTree = "<group>"; };
+		1D7CFC3424A3C5210009AF5C /* ManualEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualEntryViewController.swift; sourceTree = "<group>"; };
+		1D7CFC3624A3C53C0009AF5C /* ManualEntryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ManualEntryViewController.xib; sourceTree = "<group>"; };
+		1D7CFC3E24A3F14E0009AF5C /* LogoutPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutPayload.swift; sourceTree = "<group>"; };
+		1D7CFC4024A412560009AF5C /* ScanResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanResult.swift; sourceTree = "<group>"; };
+		1D7CFC4224A5327A0009AF5C /* SessionEntriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionEntriesTableViewController.swift; sourceTree = "<group>"; };
+		1D7CFC4424A537F00009AF5C /* PayloadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayloadCell.swift; sourceTree = "<group>"; };
+		1D80918A24A39EB0003FD6EC /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		1D80919A24A3B1D8003FD6EC /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		1D80919C24A3B3C9003FD6EC /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		1D80919F24A3B846003FD6EC /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
+		1D9FB93B24A2641800010370 /* MasjidSignin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MasjidSignin.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D9FB93E24A2641800010370 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1D9FB94024A2641800010370 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		1D9FB94224A2641800010370 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1D9FB94524A2641800010370 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1D9FB94724A2641A00010370 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1D9FB94A24A2641A00010370 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1D9FB94C24A2641A00010370 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D9FB95124A2641B00010370 /* MasjidSigninTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MasjidSigninTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D9FB95524A2641B00010370 /* MasjidSigninTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasjidSigninTests.swift; sourceTree = "<group>"; };
+		1D9FB95724A2641B00010370 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D9FB95C24A2641B00010370 /* MasjidSigninUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MasjidSigninUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D9FB96024A2641B00010370 /* MasjidSigninUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasjidSigninUITests.swift; sourceTree = "<group>"; };
+		1D9FB96224A2641B00010370 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D9FB96F24A2BF9200010370 /* LoginPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPayload.swift; sourceTree = "<group>"; };
+		1D9FB97324A2C14A00010370 /* CurrentSignins.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentSignins.swift; sourceTree = "<group>"; };
+		1D9FB97524A2C4C900010370 /* InPersonSigninPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InPersonSigninPayload.swift; sourceTree = "<group>"; };
+		1D9FB97824A2D38E00010370 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		1D9FB97B24A3135800010370 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		1D9FB97E24A3149A00010370 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+		1D9FB98024A3153B00010370 /* KeychainConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainConfiguration.swift; sourceTree = "<group>"; };
+		1D9FB98224A3156300010370 /* KeychainPasswordItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainPasswordItem.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D9FB93824A2641800010370 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D9FB94E24A2641B00010370 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D9FB95924A2641B00010370 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1D80919E24A3B4F6003FD6EC /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1D9FB94224A2641800010370 /* ViewController.swift */,
+				1D80919A24A3B1D8003FD6EC /* AccountViewController.swift */,
+				1D80919C24A3B3C9003FD6EC /* ListViewController.swift */,
+				1D80919F24A3B846003FD6EC /* ScannerViewController.swift */,
+				1D7CFC3424A3C5210009AF5C /* ManualEntryViewController.swift */,
+				1D7CFC3624A3C53C0009AF5C /* ManualEntryViewController.xib */,
+				1D7CFC4224A5327A0009AF5C /* SessionEntriesTableViewController.swift */,
+				1D7CFC4424A537F00009AF5C /* PayloadCell.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		1D9FB93224A2641800010370 = {
+			isa = PBXGroup;
+			children = (
+				1D9FB93D24A2641800010370 /* MasjidSignin */,
+				1D9FB95424A2641B00010370 /* MasjidSigninTests */,
+				1D9FB95F24A2641B00010370 /* MasjidSigninUITests */,
+				1D9FB93C24A2641800010370 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1D9FB93C24A2641800010370 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D9FB93B24A2641800010370 /* MasjidSignin.app */,
+				1D9FB95124A2641B00010370 /* MasjidSigninTests.xctest */,
+				1D9FB95C24A2641B00010370 /* MasjidSigninUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1D9FB93D24A2641800010370 /* MasjidSignin */ = {
+			isa = PBXGroup;
+			children = (
+				1D80919E24A3B4F6003FD6EC /* ViewControllers */,
+				1D9FB97D24A3146C00010370 /* Utilities */,
+				1D9FB97724A2D37600010370 /* Network */,
+				1D9FB96E24A2BF6600010370 /* Model */,
+				1D9FB93E24A2641800010370 /* AppDelegate.swift */,
+				1D9FB94024A2641800010370 /* SceneDelegate.swift */,
+				1D9FB94424A2641800010370 /* Main.storyboard */,
+				1D9FB94724A2641A00010370 /* Assets.xcassets */,
+				1D9FB94924A2641A00010370 /* LaunchScreen.storyboard */,
+				1D9FB94C24A2641A00010370 /* Info.plist */,
+			);
+			path = MasjidSignin;
+			sourceTree = "<group>";
+		};
+		1D9FB95424A2641B00010370 /* MasjidSigninTests */ = {
+			isa = PBXGroup;
+			children = (
+				1D9FB95524A2641B00010370 /* MasjidSigninTests.swift */,
+				1D9FB95724A2641B00010370 /* Info.plist */,
+			);
+			path = MasjidSigninTests;
+			sourceTree = "<group>";
+		};
+		1D9FB95F24A2641B00010370 /* MasjidSigninUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1D9FB96024A2641B00010370 /* MasjidSigninUITests.swift */,
+				1D9FB96224A2641B00010370 /* Info.plist */,
+			);
+			path = MasjidSigninUITests;
+			sourceTree = "<group>";
+		};
+		1D9FB96E24A2BF6600010370 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1D9FB96F24A2BF9200010370 /* LoginPayload.swift */,
+				1D7CFC3E24A3F14E0009AF5C /* LogoutPayload.swift */,
+				1D9FB97324A2C14A00010370 /* CurrentSignins.swift */,
+				1D7818B324A5A32E0060881B /* SigninsPayload.swift */,
+				1D7818B524A5A3C50060881B /* SigninsResult.swift */,
+				1D9FB97524A2C4C900010370 /* InPersonSigninPayload.swift */,
+				1D9FB97B24A3135800010370 /* LoginResponse.swift */,
+				1D7CFC4024A412560009AF5C /* ScanResult.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1D9FB97724A2D37600010370 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				1D9FB97824A2D38E00010370 /* Network.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		1D9FB97D24A3146C00010370 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				1D9FB97E24A3149A00010370 /* Keychain.swift */,
+				1D9FB98024A3153B00010370 /* KeychainConfiguration.swift */,
+				1D9FB98224A3156300010370 /* KeychainPasswordItem.swift */,
+				1D80918A24A39EB0003FD6EC /* Storage.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D9FB93A24A2641800010370 /* MasjidSignin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D9FB96524A2641B00010370 /* Build configuration list for PBXNativeTarget "MasjidSignin" */;
+			buildPhases = (
+				1D9FB93724A2641800010370 /* Sources */,
+				1D9FB93824A2641800010370 /* Frameworks */,
+				1D9FB93924A2641800010370 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MasjidSignin;
+			productName = MasjidSignin;
+			productReference = 1D9FB93B24A2641800010370 /* MasjidSignin.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1D9FB95024A2641B00010370 /* MasjidSigninTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D9FB96824A2641B00010370 /* Build configuration list for PBXNativeTarget "MasjidSigninTests" */;
+			buildPhases = (
+				1D9FB94D24A2641B00010370 /* Sources */,
+				1D9FB94E24A2641B00010370 /* Frameworks */,
+				1D9FB94F24A2641B00010370 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1D9FB95324A2641B00010370 /* PBXTargetDependency */,
+			);
+			name = MasjidSigninTests;
+			productName = MasjidSigninTests;
+			productReference = 1D9FB95124A2641B00010370 /* MasjidSigninTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1D9FB95B24A2641B00010370 /* MasjidSigninUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D9FB96B24A2641B00010370 /* Build configuration list for PBXNativeTarget "MasjidSigninUITests" */;
+			buildPhases = (
+				1D9FB95824A2641B00010370 /* Sources */,
+				1D9FB95924A2641B00010370 /* Frameworks */,
+				1D9FB95A24A2641B00010370 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1D9FB95E24A2641B00010370 /* PBXTargetDependency */,
+			);
+			name = MasjidSigninUITests;
+			productName = MasjidSigninUITests;
+			productReference = 1D9FB95C24A2641B00010370 /* MasjidSigninUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1D9FB93324A2641800010370 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = "Euclid Software, LLC";
+				TargetAttributes = {
+					1D9FB93A24A2641800010370 = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					1D9FB95024A2641B00010370 = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 1D9FB93A24A2641800010370;
+					};
+					1D9FB95B24A2641B00010370 = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 1D9FB93A24A2641800010370;
+					};
+				};
+			};
+			buildConfigurationList = 1D9FB93624A2641800010370 /* Build configuration list for PBXProject "MasjidSignin" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1D9FB93224A2641800010370;
+			productRefGroup = 1D9FB93C24A2641800010370 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D9FB93A24A2641800010370 /* MasjidSignin */,
+				1D9FB95024A2641B00010370 /* MasjidSigninTests */,
+				1D9FB95B24A2641B00010370 /* MasjidSigninUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D9FB93924A2641800010370 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D9FB94B24A2641A00010370 /* LaunchScreen.storyboard in Resources */,
+				1D7CFC3724A3C53C0009AF5C /* ManualEntryViewController.xib in Resources */,
+				1D9FB94824A2641A00010370 /* Assets.xcassets in Resources */,
+				1D9FB94624A2641800010370 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D9FB94F24A2641B00010370 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D9FB95A24A2641B00010370 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D9FB93724A2641800010370 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D80919D24A3B3C9003FD6EC /* ListViewController.swift in Sources */,
+				1D9FB97624A2C4C900010370 /* InPersonSigninPayload.swift in Sources */,
+				1D80919B24A3B1D8003FD6EC /* AccountViewController.swift in Sources */,
+				1D9FB97C24A3135800010370 /* LoginResponse.swift in Sources */,
+				1D7CFC4124A412560009AF5C /* ScanResult.swift in Sources */,
+				1D9FB97924A2D38E00010370 /* Network.swift in Sources */,
+				1D7CFC4524A537F00009AF5C /* PayloadCell.swift in Sources */,
+				1D9FB97424A2C14A00010370 /* CurrentSignins.swift in Sources */,
+				1D9FB97024A2BF9200010370 /* LoginPayload.swift in Sources */,
+				1D7CFC3F24A3F14E0009AF5C /* LogoutPayload.swift in Sources */,
+				1D9FB94324A2641800010370 /* ViewController.swift in Sources */,
+				1D9FB93F24A2641800010370 /* AppDelegate.swift in Sources */,
+				1D9FB98124A3153B00010370 /* KeychainConfiguration.swift in Sources */,
+				1D9FB94124A2641800010370 /* SceneDelegate.swift in Sources */,
+				1D7818B624A5A3C50060881B /* SigninsResult.swift in Sources */,
+				1D7CFC3524A3C5210009AF5C /* ManualEntryViewController.swift in Sources */,
+				1D9FB97F24A3149A00010370 /* Keychain.swift in Sources */,
+				1D7818B424A5A32E0060881B /* SigninsPayload.swift in Sources */,
+				1D9FB98324A3156300010370 /* KeychainPasswordItem.swift in Sources */,
+				1D80918B24A39EB0003FD6EC /* Storage.swift in Sources */,
+				1D8091A024A3B846003FD6EC /* ScannerViewController.swift in Sources */,
+				1D7CFC4324A5327A0009AF5C /* SessionEntriesTableViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D9FB94D24A2641B00010370 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D9FB97A24A311CF00010370 /* Network.swift in Sources */,
+				1D9FB95624A2641B00010370 /* MasjidSigninTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D9FB95824A2641B00010370 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D9FB96124A2641B00010370 /* MasjidSigninUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1D9FB95324A2641B00010370 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1D9FB93A24A2641800010370 /* MasjidSignin */;
+			targetProxy = 1D9FB95224A2641B00010370 /* PBXContainerItemProxy */;
+		};
+		1D9FB95E24A2641B00010370 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1D9FB93A24A2641800010370 /* MasjidSignin */;
+			targetProxy = 1D9FB95D24A2641B00010370 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1D9FB94424A2641800010370 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1D9FB94524A2641800010370 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1D9FB94924A2641A00010370 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1D9FB94A24A2641A00010370 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1D9FB96324A2641B00010370 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1D9FB96424A2641B00010370 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1D9FB96624A2641B00010370 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y98EGXRXN9;
+				INFOPLIST_FILE = MasjidSignin/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.euclidsoftware.MasjidSignin;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1D9FB96724A2641B00010370 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y98EGXRXN9;
+				INFOPLIST_FILE = MasjidSignin/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.euclidsoftware.MasjidSignin;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1D9FB96924A2641B00010370 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y98EGXRXN9;
+				INFOPLIST_FILE = MasjidSigninTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.euclidsoftware.MasjidSigninTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MasjidSignin.app/MasjidSignin";
+			};
+			name = Debug;
+		};
+		1D9FB96A24A2641B00010370 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y98EGXRXN9;
+				INFOPLIST_FILE = MasjidSigninTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.euclidsoftware.MasjidSigninTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MasjidSignin.app/MasjidSignin";
+			};
+			name = Release;
+		};
+		1D9FB96C24A2641B00010370 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y98EGXRXN9;
+				INFOPLIST_FILE = MasjidSigninUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.euclidsoftware.MasjidSigninUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MasjidSignin;
+			};
+			name = Debug;
+		};
+		1D9FB96D24A2641B00010370 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y98EGXRXN9;
+				INFOPLIST_FILE = MasjidSigninUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.euclidsoftware.MasjidSigninUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MasjidSignin;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D9FB93624A2641800010370 /* Build configuration list for PBXProject "MasjidSignin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D9FB96324A2641B00010370 /* Debug */,
+				1D9FB96424A2641B00010370 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1D9FB96524A2641B00010370 /* Build configuration list for PBXNativeTarget "MasjidSignin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D9FB96624A2641B00010370 /* Debug */,
+				1D9FB96724A2641B00010370 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1D9FB96824A2641B00010370 /* Build configuration list for PBXNativeTarget "MasjidSigninTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D9FB96924A2641B00010370 /* Debug */,
+				1D9FB96A24A2641B00010370 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1D9FB96B24A2641B00010370 /* Build configuration list for PBXNativeTarget "MasjidSigninUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D9FB96C24A2641B00010370 /* Debug */,
+				1D9FB96D24A2641B00010370 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1D9FB93324A2641800010370 /* Project object */;
+}
