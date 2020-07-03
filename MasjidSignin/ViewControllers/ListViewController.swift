@@ -21,7 +21,7 @@ class ListViewController: UITableViewController {
         // Configure Refresh Control
         rc.addTarget(self, action: #selector(refresh), for: .valueChanged)
 
-        formatter.dateFormat = "MM/dd/YYYY HH:mm"
+        formatter.dateFormat = "MM/dd/yyyy HH:mm"
 
         refresh()
     }
@@ -39,6 +39,7 @@ class ListViewController: UITableViewController {
             }
             else if let error = error {
                 DispatchQueue.main.async {
+                    self.refreshControl?.endRefreshing()
                     self.alert(title: "ERROR", message: error.appDescription())
                 }
             }
@@ -61,7 +62,10 @@ class ListViewController: UITableViewController {
                 }
             }
             else if let error = error {
-                self.alert(title: "ERROR", message: error.appDescription())
+                DispatchQueue.main.async {
+                    self.refreshControl?.endRefreshing()
+                    self.alert(title: "ERROR", message: error.appDescription())
+                }
             }
         }
     }

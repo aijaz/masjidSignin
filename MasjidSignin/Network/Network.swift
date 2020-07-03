@@ -32,7 +32,10 @@ enum NetworkError: Error {
 }
 
 struct Network {
-    var serverURL = "http://localhost:5000/api/v1.0/"
+    let scheme = "http"
+    let host = "localhost"
+    let path = "/api/v1.0/"
+
 
     func loginWith(email: String
         , password: String
@@ -40,7 +43,11 @@ struct Network {
     ) {
 
         let session = URLSession.shared
-        let request = getRequestFor(urlString: "login")
+        let url = URL(string: "\(scheme)://\(host)\(path)login")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+
 
         let loginPayload = LoginPayload(email: email, password: password)
         let encoder = JSONEncoder()
@@ -87,20 +94,9 @@ struct Network {
         guard let token = Keychain.read(field: .token) else { return }
 
         let session = URLSession.shared
-        let request = getRequestFor(urlString: "logout")
-        let payload = LogoutPayload(token: token)
+        let request = getRequestFor(urlString: "logout", token: token)
 
-        let encoder = JSONEncoder()
-        var jsonData: Data!
-        do {
-            jsonData = try encoder.encode(payload)
-        }
-        catch {
-            callback(NetworkError.encodingError)
-            return
-        }
-
-        let task = session.uploadTask(with: request, from: jsonData) { data, response, error in
+        let task = session.dataTask(with: request) { data, response, error in
             if let error = error {
                 callback(NetworkError.serverError(error))
             }
@@ -114,12 +110,13 @@ struct Network {
 
     }
 
-    func getRequestFor(urlString: String) -> URLRequest {
-        let url = URL(string: "\(serverURL)\(urlString)")!
+    func getRequestFor(urlString: String, token: String, httpMethod: String = "POST") -> URLRequest {
+        let url = URL(string: "\(scheme)://\(host)\(path)\(urlString)")!
 
         var request = URLRequest(url: url)
-        request.httpMethod = "POST"
+        request.httpMethod = httpMethod
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue(token, forHTTPHeaderField: "token")
 
 
         return request
@@ -132,19 +129,32 @@ struct Network {
 
 
         let session = URLSession.shared
-        let request = getRequestFor(urlString: "signins")
 
-        let payload = SigninsPayload(token: token, lessThan: lessThan)
-        let encoder = JSONEncoder()
-        var jsonData: Data!
-        do {
-            jsonData = try encoder.encode(payload)
+        var urlComponents = URLComponents()
+        urlComponents.scheme = scheme
+        urlComponents.host = host
+        urlComponents.path = "\(path)signins"
+
+        if let lessThan = lessThan {
+            urlComponents.queryItems = [
+                URLQueryItem(name: "less_than", value: "\(lessThan)"),
+                URLQueryItem(name: "return_count", value: "100")
+            ]
         }
-        catch {
+        else {
+            urlComponents.queryItems = [
+                URLQueryItem(name: "return_count", value: "100")
+            ]
+        }
+        guard let url = urlComponents.url else {
             callback(nil, NetworkError.encodingError)
             return
         }
-        let task = session.uploadTask(with: request, from: jsonData) { data, response, error in
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.addValue(token, forHTTPHeaderField: "token")
+
+        let task = session.dataTask(with: request) { data, response, error in
             if let data = data {
                 let decoder = JSONDecoder()
                 var result: SigninsResult!
@@ -178,10 +188,10 @@ struct Network {
     func submit(payload: InPersonSigninPayload
         , calling callback: @escaping (ScanResult?, NetworkError?) -> ()
     ) {
-        guard let _ = Keychain.read(field: .token) else { return }
+        guard let token = Keychain.read(field: .token) else { return }
 
         let session = URLSession.shared
-        let request = getRequestFor(urlString: "signin")
+        let request = getRequestFor(urlString: "signin", token: token)
 
         let encoder = JSONEncoder()
         var jsonData: Data!

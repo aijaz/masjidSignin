@@ -15,7 +15,7 @@ class SessionEntriesTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        formatter.dateFormat = "MM/dd/YYYY HH:mm"
+        formatter.dateFormat = "MM/dd/yyyy HH:mm"
     }
 
     func refresh(all: Bool) {
