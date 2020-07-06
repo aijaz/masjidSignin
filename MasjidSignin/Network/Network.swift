@@ -35,6 +35,7 @@ struct Network {
     let scheme = "http"
     let host = "localhost"
     let path = "/api/v1.0/"
+    let port:Int? = 5000
 
 
     func loginWith(email: String
@@ -43,7 +44,14 @@ struct Network {
     ) {
 
         let session = URLSession.shared
-        let url = URL(string: "\(scheme)://\(host)\(path)login")!
+        var portString: String
+        if let port = port {
+            portString = ":\(port)"
+        }
+        else {
+            portString = ""
+        }
+        let url = URL(string: "\(scheme)://\(host)\(portString)\(path)login")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -111,7 +119,14 @@ struct Network {
     }
 
     func getRequestFor(urlString: String, token: String, httpMethod: String = "POST") -> URLRequest {
-        let url = URL(string: "\(scheme)://\(host)\(path)\(urlString)")!
+        var portString: String
+        if let port = port {
+            portString = ":\(port)"
+        }
+        else {
+            portString = ""
+        }
+        let url = URL(string: "\(scheme)://\(host)\(portString)\(path)\(urlString)")!
 
         var request = URLRequest(url: url)
         request.httpMethod = httpMethod
@@ -133,6 +148,7 @@ struct Network {
         var urlComponents = URLComponents()
         urlComponents.scheme = scheme
         urlComponents.host = host
+        urlComponents.port = port
         urlComponents.path = "\(path)signins"
 
         if let lessThan = lessThan {
@@ -245,6 +261,52 @@ struct Network {
             callback(scanResult, nil)
             return false
         }
+    }
+
+    func resetPasswordWith(guid: String
+        , password: String
+        , calling callback: @escaping (NetworkError?) -> ()
+    ) {
+
+        let session = URLSession.shared
+        var portString: String
+        if let port = port {
+            portString = ":\(port)"
+        }
+        else {
+            portString = ""
+        }
+        let url = URL(string: "\(scheme)://\(host)\(portString)\(path)verifyPasswordChange")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+
+
+        let resetPayload = ResetPayload(guid: guid, password: password)
+        let encoder = JSONEncoder()
+        var jsonData: Data!
+        do {
+            jsonData = try encoder.encode(resetPayload)
+        }
+        catch {
+            callback(NetworkError.encodingError)
+            return
+        }
+
+
+        let task = session.uploadTask(with: request, from: jsonData) { data, response, error in
+            if let error = error {
+                callback(NetworkError.serverError(error))
+                return
+            }
+            else {
+                callback(nil)
+                return
+            }
+
+        }
+
+        task.resume()
     }
 
 }

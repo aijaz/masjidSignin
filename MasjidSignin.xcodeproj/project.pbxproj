@@ -36,6 +36,7 @@
 		1D9FB97F24A3149A00010370 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FB97E24A3149A00010370 /* Keychain.swift */; };
 		1D9FB98124A3153B00010370 /* KeychainConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FB98024A3153B00010370 /* KeychainConfiguration.swift */; };
 		1D9FB98324A3156300010370 /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FB98224A3156300010370 /* KeychainPasswordItem.swift */; };
+		1DCD150D24B2F65F0078B26F /* ResetPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCD150C24B2F65F0078B26F /* ResetPayload.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		1D9FB97E24A3149A00010370 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		1D9FB98024A3153B00010370 /* KeychainConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainConfiguration.swift; sourceTree = "<group>"; };
 		1D9FB98224A3156300010370 /* KeychainPasswordItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainPasswordItem.swift; sourceTree = "<group>"; };
+		1DCD150C24B2F65F0078B26F /* ResetPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPayload.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				1D9FB96F24A2BF9200010370 /* LoginPayload.swift */,
+				1DCD150C24B2F65F0078B26F /* ResetPayload.swift */,
 				1D7CFC3E24A3F14E0009AF5C /* LogoutPayload.swift */,
 				1D9FB97324A2C14A00010370 /* CurrentSignins.swift */,
 				1D7818B324A5A32E0060881B /* SigninsPayload.swift */,
@@ -367,6 +370,7 @@
 				1D9FB93F24A2641800010370 /* AppDelegate.swift in Sources */,
 				1D9FB98124A3153B00010370 /* KeychainConfiguration.swift in Sources */,
 				1D9FB94124A2641800010370 /* SceneDelegate.swift in Sources */,
+				1DCD150D24B2F65F0078B26F /* ResetPayload.swift in Sources */,
 				1D7818B624A5A3C50060881B /* SigninsResult.swift in Sources */,
 				1D7CFC3524A3C5210009AF5C /* ManualEntryViewController.swift in Sources */,
 				1D9FB97F24A3149A00010370 /* Keychain.swift in Sources */,

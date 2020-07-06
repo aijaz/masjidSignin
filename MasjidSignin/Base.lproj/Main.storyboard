@@ -22,7 +22,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nkl-hv-xaU">
-                                <rect key="frame" x="184" y="106.5" width="46" height="30"/>
+                                <rect key="frame" x="328" y="106.5" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="handleButtonTap:" destination="Sef-2x-A8X" eventType="touchUpInside" id="c3t-4p-YCQ"/>
@@ -52,13 +52,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8gC-Rv-PQu">
+                                <rect key="frame" x="40" y="106.5" width="109" height="30"/>
+                                <state key="normal" title="Reset Password"/>
+                                <connections>
+                                    <action selector="handleReset:" destination="Sef-2x-A8X" eventType="touchUpInside" id="1PZ-j1-feT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="njR-Ih-Rt5" firstAttribute="leading" secondItem="etr-3n-SVx" secondAttribute="leading" id="0vJ-wG-nDq"/>
                             <constraint firstItem="etr-3n-SVx" firstAttribute="trailing" secondItem="Vtt-UL-pIp" secondAttribute="trailing" constant="20" id="7IB-i1-8ui"/>
-                            <constraint firstItem="nkl-hv-xaU" firstAttribute="centerX" secondItem="etr-3n-SVx" secondAttribute="centerX" id="8zT-qs-URp"/>
+                            <constraint firstItem="8gC-Rv-PQu" firstAttribute="leading" secondItem="etr-3n-SVx" secondAttribute="leading" constant="40" id="8hO-nd-IbV"/>
                             <constraint firstItem="Vtt-UL-pIp" firstAttribute="top" secondItem="nkl-hv-xaU" secondAttribute="bottom" constant="24" id="EgJ-D5-cs9"/>
+                            <constraint firstItem="nkl-hv-xaU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8gC-Rv-PQu" secondAttribute="trailing" constant="5" id="HQO-oZ-Gt1"/>
                             <constraint firstItem="nkl-hv-xaU" firstAttribute="top" secondItem="FF7-ab-m8y" secondAttribute="bottom" constant="23" id="HZn-Ol-6cg"/>
                             <constraint firstItem="Kfv-ba-fam" firstAttribute="top" secondItem="Vtt-UL-pIp" secondAttribute="bottom" constant="8" id="IvT-DI-abs"/>
                             <constraint firstItem="njR-Ih-Rt5" firstAttribute="trailing" secondItem="etr-3n-SVx" secondAttribute="trailing" id="JZO-oI-DAy"/>
@@ -66,9 +74,11 @@
                             <constraint firstItem="FF7-ab-m8y" firstAttribute="top" secondItem="etr-3n-SVx" secondAttribute="top" constant="19" id="Jzb-ap-9cB"/>
                             <constraint firstItem="NGw-3I-9DH" firstAttribute="leading" secondItem="etr-3n-SVx" secondAttribute="leading" constant="20" id="LsG-FF-RbI"/>
                             <constraint firstItem="NGw-3I-9DH" firstAttribute="top" secondItem="Kfv-ba-fam" secondAttribute="bottom" constant="8" id="P65-xS-pFH"/>
+                            <constraint firstItem="etr-3n-SVx" firstAttribute="trailing" secondItem="nkl-hv-xaU" secondAttribute="trailing" constant="40" id="PlV-9E-paR"/>
                             <constraint firstItem="njR-Ih-Rt5" firstAttribute="top" secondItem="NGw-3I-9DH" secondAttribute="bottom" constant="8" id="WKX-gN-BG9"/>
                             <constraint firstItem="etr-3n-SVx" firstAttribute="trailing" secondItem="NGw-3I-9DH" secondAttribute="trailing" constant="20" id="YKj-fr-eI0"/>
                             <constraint firstItem="Kfv-ba-fam" firstAttribute="trailing" secondItem="etr-3n-SVx" secondAttribute="trailing" id="dMd-px-h2U"/>
+                            <constraint firstItem="8gC-Rv-PQu" firstAttribute="centerY" secondItem="nkl-hv-xaU" secondAttribute="centerY" id="mru-ZX-kIn"/>
                             <constraint firstItem="Kfv-ba-fam" firstAttribute="leading" secondItem="etr-3n-SVx" secondAttribute="leading" id="oqa-AY-q8A"/>
                             <constraint firstItem="FF7-ab-m8y" firstAttribute="centerX" secondItem="etr-3n-SVx" secondAttribute="centerX" id="rWY-L1-7W4"/>
                         </constraints>
@@ -79,6 +89,7 @@
                         <outlet property="button" destination="nkl-hv-xaU" id="XKO-dQ-rrj"/>
                         <outlet property="captionLabel" destination="FF7-ab-m8y" id="nFI-9y-bCb"/>
                         <outlet property="endPicker" destination="njR-Ih-Rt5" id="DLA-gn-hEV"/>
+                        <outlet property="resetButton" destination="8gC-Rv-PQu" id="f44-SR-Tog"/>
                         <outlet property="startPicker" destination="Kfv-ba-fam" id="ZVR-Ru-nYq"/>
                     </connections>
                 </viewController>

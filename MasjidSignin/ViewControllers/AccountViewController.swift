@@ -14,6 +14,7 @@ class AccountViewController: UIViewController {
     @IBOutlet weak var button: UIButton!
     @IBOutlet weak var startPicker: UIDatePicker!
     @IBOutlet weak var endPicker: UIDatePicker!
+    @IBOutlet weak var resetButton: UIButton!
 
 
     var token: String?
@@ -61,10 +62,12 @@ class AccountViewController: UIViewController {
         if let _ = token, let name = name {
             captionLabel.text = "You are logged in as \(name)"
             button.setTitle("Log out", for: .normal)
+            resetButton.isHidden = true
         }
         else {
             captionLabel.text = "You are not logged in"
             button.setTitle("Log in", for: .normal)
+            resetButton.isHidden = false
         }
     }
 
@@ -125,6 +128,55 @@ class AccountViewController: UIViewController {
         token = nil
         name = nil
         refreshView()
+    }
+
+    @IBAction func handleReset(_ sender: Any) {
+        let alertController = UIAlertController(title: "Reset Password", message: "Enter the password reset code and your new password", preferredStyle: .alert)
+
+        alertController.addTextField { (textField) in
+            textField.placeholder = "Password reset code"
+        }
+
+        alertController.addTextField { (textField) in
+            textField.placeholder = "New Password"
+            textField.isSecureTextEntry = true
+        }
+
+
+        let resetAction = UIAlertAction(title: "Reset Password", style: .default) { (_) in
+            let codeField = alertController.textFields![0]
+            let passwordField = alertController.textFields![1]
+
+            let network = Network()
+
+            network.resetPasswordWith(guid: codeField.text ?? "", password: passwordField.text ?? "") { error in
+                if let _ = error {
+                    let alertController2 = UIAlertController(title: "Reset Failed", message: "The code/password combination you entered was incorrect.", preferredStyle: .alert)
+                    let ok = UIAlertAction(title: "Okay", style: .default, handler: nil)
+                    alertController2.addAction(ok)
+                    DispatchQueue.main.async {
+                        self.present(alertController2, animated: true, completion: nil)
+                    }
+                }
+                else {
+                    let alertController2 = UIAlertController(title: "Reset Complete", message: "Your password has been reset", preferredStyle: .alert)
+                    let ok = UIAlertAction(title: "Okay", style: .default, handler: nil)
+                    alertController2.addAction(ok)
+                    DispatchQueue.main.async {
+                        self.present(alertController2, animated: true, completion: nil)
+                    }
+                }
+            }
+
+        }
+
+
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(resetAction)
+        alertController.addAction(cancelAction)
+
+        present(alertController, animated: true, completion: nil)
+
     }
 
 }
