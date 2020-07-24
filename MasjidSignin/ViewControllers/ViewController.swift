@@ -90,11 +90,52 @@ class ViewController: UIViewController {
             }
         }
         else if api == "3" {
-            if array.count != 2 {
+            if array.count != 7 {
                 alert(title: "Invalid code", message: "Wrong number of data items for API version \(api)")
                 return
             }
             let uuid = array[1]
+            let name = array[2]
+            let phone = array[3]
+            let email = array[4]
+            let fMorf = array[5]
+            let numPeople = Int(array[6]) ?? 1
+
+            var morf = UserDefaults.standard.string(forKey: "morf") ?? "M"
+            if morf != "F" { morf = "M" }
+
+            if morf != fMorf {
+                alert(title: "Invalid Entry", message: "Code should be for \(morf), but is for \(fMorf)")
+                return
+            }
+
+            let payload = RedeemReservationPayload(uuid: uuid, morf: morf)
+
+
+
+            let localPayload = InPersonSigninPayload(name: name
+                , phone: phone
+                , email: email
+                , scanTime: Date().timeIntervalSince1970
+                , clientId: UUID().uuidString
+                , numPeople: numPeople
+                , maleOrFemale: morf
+            )
+            for _ in Range(1...numPeople) {
+                SessionEntries.add(payload: localPayload)
+            }
+
+            refresh()
+
+            let n = Network()
+            n.redeemReservation(payload: payload, localPayload: localPayload) { result, error in
+                if let error = error {
+                    DispatchQueue.main.async {
+                        self.alert(title: error.appDescription(), message: "The record has been saved locally")
+                    }
+                }
+            }
+            
 
         }
         else {

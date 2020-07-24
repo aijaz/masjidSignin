@@ -53,7 +53,7 @@ class ManualEntryController: UIViewController {
             , maleOrFemale: morf
         )
 
-        for _ in (1...numPeople) {
+        for _ in (1...numPeople) {				    
             SessionEntries.add(payload: inPersonPayload)
         }
         presenter!.refresh()

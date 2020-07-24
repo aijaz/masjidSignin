@@ -44,6 +44,7 @@
 		1DE6174624CA7BB70052BDB8 /* SettingsServerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE6174524CA7BB70052BDB8 /* SettingsServerCell.swift */; };
 		1DE6174824CA7BE60052BDB8 /* SettingsMorfCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE6174724CA7BE60052BDB8 /* SettingsMorfCell.swift */; };
 		1DE6174A24CB09640052BDB8 /* ServerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE6174924CB09640052BDB8 /* ServerTableViewController.swift */; };
+		1DE6174C24CB4BC90052BDB8 /* ErrorPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE6174B24CB4BC90052BDB8 /* ErrorPayload.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +107,7 @@
 		1DE6174524CA7BB70052BDB8 /* SettingsServerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsServerCell.swift; sourceTree = "<group>"; };
 		1DE6174724CA7BE60052BDB8 /* SettingsMorfCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsMorfCell.swift; sourceTree = "<group>"; };
 		1DE6174924CB09640052BDB8 /* ServerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerTableViewController.swift; sourceTree = "<group>"; };
+		1DE6174B24CB4BC90052BDB8 /* ErrorPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorPayload.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				1D9FB96F24A2BF9200010370 /* LoginPayload.swift */,
+				1DE6174B24CB4BC90052BDB8 /* ErrorPayload.swift */,
 				1DCD150C24B2F65F0078B26F /* ResetPayload.swift */,
 				1D7CFC3E24A3F14E0009AF5C /* LogoutPayload.swift */,
 				1D9FB97324A2C14A00010370 /* CurrentSignins.swift */,
@@ -397,6 +400,7 @@
 				1D7818B624A5A3C50060881B /* SigninsResult.swift in Sources */,
 				1DE6174A24CB09640052BDB8 /* ServerTableViewController.swift in Sources */,
 				1D7CFC3524A3C5210009AF5C /* ManualEntryViewController.swift in Sources */,
+				1DE6174C24CB4BC90052BDB8 /* ErrorPayload.swift in Sources */,
 				1D9FB97F24A3149A00010370 /* Keychain.swift in Sources */,
 				1D7818B424A5A32E0060881B /* SigninsPayload.swift in Sources */,
 				1D9FB98324A3156300010370 /* KeychainPasswordItem.swift in Sources */,

@@ -14,7 +14,7 @@ struct InPersonSigninPayload: Codable {
     let email: String
     let scanTime: Double // Time interval since 1970
     let clientId: String
-    let numPeople: Int?
+    let numPeople: Int
     let maleOrFemale: String?
 
     enum CodingKeys: String, CodingKey {
@@ -27,4 +27,9 @@ struct InPersonSigninPayload: Codable {
         case maleOrFemale = "morf"
     }
 
+}
+
+struct RedeemReservationPayload: Codable {
+    let uuid: String
+    let morf: String
 }

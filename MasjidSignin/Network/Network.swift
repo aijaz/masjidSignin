@@ -14,6 +14,7 @@ enum NetworkError: Error {
     case serverError(Error)
     case unknownIdError
     case unauthorizedError
+    case otherError(String)
 
     func appDescription() -> String {
         switch self {
@@ -27,6 +28,9 @@ enum NetworkError: Error {
                 return "Unknown ID"
             case .unauthorizedError:
                 return "Unauthorized"
+            case .otherError (let s):
+                return "Sever Error \(s)"
+
         }
     }
 }
@@ -227,6 +231,68 @@ struct Network {
             }
             else {
                 FailedEntries.add(payload: payload)
+                callback(nil, nil)
+                return
+            }
+        }
+        task.resume()
+    }
+
+    func redeemReservation(payload: RedeemReservationPayload, localPayload: InPersonSigninPayload
+        , calling callback: @escaping (ScanResult?, NetworkError?) -> ()
+    ) {
+        guard let token = Keychain.read(field: .token) else { return }
+
+        let session = URLSession.shared
+        let request = getRequestFor(urlString: "redeemReservation", token: token)
+
+        let encoder = JSONEncoder()
+        var jsonData: Data!
+        do {
+            jsonData = try encoder.encode(payload)
+        }
+        catch {
+            callback(nil, NetworkError.encodingError)
+            for _ in Range (1...localPayload.numPeople) { FailedEntries.add(payload: localPayload) }
+            return
+        }
+
+        let task = session.uploadTask(with: request, from: jsonData) { data, response, error in
+
+            if let error = error {
+                for _ in Range (1...localPayload.numPeople) { FailedEntries.add(payload: localPayload) }
+                callback(nil, NetworkError.serverError(error))
+
+            }
+            else if let httpURLResponse = response as? HTTPURLResponse,
+                httpURLResponse.statusCode >= 400 {
+
+                if let httpURLResponse = response as? HTTPURLResponse,
+                    httpURLResponse.statusCode == 400 {
+                    guard let data = data else { callback(nil, NetworkError.decodingError); return; }
+                    let decoder = JSONDecoder()
+                    var errorPayload: ErrorPayload!
+                    do {
+                        errorPayload = try decoder.decode(ErrorPayload.self, from: data)
+                    }
+                    catch {
+                        callback(nil, NetworkError.decodingError)
+                        return
+                    }
+
+                    callback(nil, NetworkError.otherError(errorPayload.message))
+                }
+                else {
+                    for _ in Range (1...localPayload.numPeople) { FailedEntries.add(payload: localPayload) }
+                    callback(nil, NetworkError.unauthorizedError)
+                }
+
+            }
+            else if let data = data {
+                let _ = self.handleScanResult(data: data, calling: callback)
+            }
+            else {
+                for _ in Range (1...localPayload.numPeople) { FailedEntries.add(payload: localPayload) }
                 callback(nil, nil)
                 return
             }
