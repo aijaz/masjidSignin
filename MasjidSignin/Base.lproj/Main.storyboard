@@ -18,7 +18,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qTY-a0-SXn">
                                 <rect key="frame" x="0.0" y="769" width="414" height="44"/>
-                                <color key="backgroundColor" systemColor="systemGray3Color" red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemGray4Color" red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="arZ-3a-Xxp"/>
                                 </constraints>
@@ -368,14 +368,15 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ActionCell" id="QiB-IA-Ypf" customClass="SettingsActionCell" customModule="MasjidSignin" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="55.5" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="55.5" width="414" height="47"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QiB-IA-Ypf" id="48w-xb-7rs">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="47"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VDB-Sy-bWZ">
-                                            <rect key="frame" x="20" y="7" width="90" height="30.5"/>
+                                            <rect key="frame" x="20" y="7" width="100" height="33.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <state key="normal" title="ActionButton"/>
                                             <connections>
                                                 <action selector="handleButtonPress:" destination="QiB-IA-Ypf" eventType="touchUpInside" id="kbx-od-TKa"/>
@@ -394,14 +395,14 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TimeCell" rowHeight="295" id="cWK-XP-njS" customClass="SettingsTimeCell" customModule="MasjidSignin" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="99.5" width="414" height="295"/>
+                                <rect key="frame" x="0.0" y="102.5" width="414" height="295"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cWK-XP-njS" id="rLq-az-2ie">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="295"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" verticalCompressionResistancePriority="752" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="TdA-u5-N0f">
-                                            <rect key="frame" x="20" y="11" width="373.5" height="281.5"/>
+                                            <rect key="frame" x="20" y="11" width="373.5" height="273"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Oqi-DC-itc">
                                                     <rect key="frame" x="0.0" y="0.0" width="373.5" height="20.5"/>
@@ -424,40 +425,29 @@
                                                     </constraints>
                                                 </stackView>
                                                 <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="PNF-yt-lx0">
-                                                    <rect key="frame" x="0.0" y="27.5" width="373.5" height="203"/>
+                                                    <rect key="frame" x="0.0" y="27.5" width="373.5" height="245.5"/>
                                                     <connections>
                                                         <action selector="handlePickerValueChanged:" destination="cWK-XP-njS" eventType="valueChanged" id="qmW-VN-9Or"/>
                                                     </connections>
                                                 </datePicker>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LjZ-5z-2xZ">
-                                                    <rect key="frame" x="0.0" y="237.5" width="373.5" height="44"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="44" id="ner-R1-8Y5"/>
-                                                    </constraints>
-                                                    <state key="normal" title="Button"/>
-                                                    <connections>
-                                                        <action selector="handleButtonPress:" destination="cWK-XP-njS" eventType="touchUpInside" id="W8o-aI-ray"/>
-                                                    </connections>
-                                                </button>
                                             </subviews>
                                         </stackView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="TdA-u5-N0f" firstAttribute="top" secondItem="rLq-az-2ie" secondAttribute="top" constant="11" id="9Zv-7t-w7a"/>
                                         <constraint firstAttribute="trailing" secondItem="TdA-u5-N0f" secondAttribute="trailing" constant="20.5" id="XJJ-Qc-NbL"/>
-                                        <constraint firstAttribute="bottom" secondItem="TdA-u5-N0f" secondAttribute="bottom" constant="2.5" id="aaz-Eq-kST"/>
+                                        <constraint firstAttribute="bottom" secondItem="TdA-u5-N0f" secondAttribute="bottom" constant="11" id="aaz-Eq-kST"/>
                                         <constraint firstItem="TdA-u5-N0f" firstAttribute="leading" secondItem="rLq-az-2ie" secondAttribute="leading" constant="20" id="rBj-I4-dH3"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="button" destination="LjZ-5z-2xZ" id="HNL-vs-yZM"/>
                                     <outlet property="headingLabel" destination="y5x-TV-1MB" id="uP4-Pg-Ihx"/>
                                     <outlet property="picker" destination="PNF-yt-lx0" id="oFb-oV-Vvg"/>
                                     <outlet property="valueLabel" destination="W4O-PJ-bJg" id="S25-lv-Jok"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ServerCell" rowHeight="45" id="xTg-Zf-Cxo" customClass="SettingsServerCell" customModule="MasjidSignin" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="394.5" width="414" height="45"/>
+                                <rect key="frame" x="0.0" y="397.5" width="414" height="45"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xTg-Zf-Cxo" id="hwJ-Dk-bAx">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="45"/>
@@ -483,7 +473,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MorfCell" rowHeight="100" id="bgM-dM-cxY" customClass="SettingsMorfCell" customModule="MasjidSignin" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="439.5" width="414" height="100"/>
+                                <rect key="frame" x="0.0" y="442.5" width="414" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bgM-dM-cxY" id="1fr-T3-wlW">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>

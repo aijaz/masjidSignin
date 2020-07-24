@@ -148,6 +148,38 @@ extension SettingsTableViewController {
         }
         return UITableViewCell()
     }
+
+    override func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+        if indexPath.section == 1 && indexPath.row == 0 {
+            return false
+        }
+        return true
+    }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let section = indexPath.section
+        if section == 2 { return }
+        let row = indexPath.row
+
+        if section == 0 {
+            let cell = tableView.cellForRow(at: indexPath) as! SettingsActionCell
+            cell.callback()
+        }
+        else if section == 1 {
+            if row == 1 {
+                let cell = tableView.cellForRow(at: indexPath) as! SettingsActionCell
+                cell.callback()
+            }
+            else if row == 2 {
+                settingStartTime = !settingStartTime
+                tableView.reloadRows(at: [indexPath], with: .automatic)
+            }
+            else if row == 3 {
+                settingEndTime = !settingEndTime
+                tableView.reloadRows(at: [indexPath], with: .automatic)
+            }
+        }
+    }
 }
 
 

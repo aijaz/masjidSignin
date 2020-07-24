@@ -13,7 +13,6 @@ class SettingsTimeCell: UITableViewCell {
     @IBOutlet weak var headingLabel: UILabel!
     @IBOutlet weak var valueLabel: UILabel!
     @IBOutlet weak var picker: UIDatePicker!
-    @IBOutlet weak var button: UIButton!
 
     weak var vc: SettingsTableViewController!
     var isStart = false
@@ -30,11 +29,9 @@ class SettingsTimeCell: UITableViewCell {
 
             if vc.settingStartTime {
                 picker.isHidden = false
-                button.setTitle("Dismiss", for: .normal)
             }
             else {
                 picker.isHidden = true
-                button.setTitle("Edit", for: .normal)
             }
         }
         else {
@@ -44,11 +41,9 @@ class SettingsTimeCell: UITableViewCell {
 
             if vc.settingEndTime {
                 picker.isHidden = false
-                button.setTitle("Dismiss", for: .normal)
             }
             else {
                 picker.isHidden = true
-                button.setTitle("Edit", for: .normal)
             }
         }
 
