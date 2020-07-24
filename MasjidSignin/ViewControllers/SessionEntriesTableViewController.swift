@@ -21,7 +21,6 @@ class SessionEntriesTableViewController: UITableViewController {
     func refresh(all: Bool) {
         let startDate = UserDefaults.standard.object(forKey: "sessionStartDate") as? Date ?? Date(timeIntervalSince1970: 0)
         let endDate = UserDefaults.standard.object(forKey: "sessionEndDate") as? Date ?? Date()
-        print ("startDate is \(startDate) and endDate is \(endDate)")
         let startTimeInterval = startDate.timeIntervalSince1970
         let endTimeInterval = endDate.timeIntervalSince1970
 

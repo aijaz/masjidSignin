@@ -36,7 +36,9 @@
 		1D9FB97F24A3149A00010370 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FB97E24A3149A00010370 /* Keychain.swift */; };
 		1D9FB98124A3153B00010370 /* KeychainConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FB98024A3153B00010370 /* KeychainConfiguration.swift */; };
 		1D9FB98324A3156300010370 /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FB98224A3156300010370 /* KeychainPasswordItem.swift */; };
+		1DA8D86724BE17A00086A061 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA8D86624BE17A00086A061 /* SettingsTableViewController.swift */; };
 		1DCD150D24B2F65F0078B26F /* ResetPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCD150C24B2F65F0078B26F /* ResetPayload.swift */; };
+		1DE6174024C9F1420052BDB8 /* ReservationRedeemPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE6173F24C9F1420052BDB8 /* ReservationRedeemPayload.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,7 +93,9 @@
 		1D9FB97E24A3149A00010370 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		1D9FB98024A3153B00010370 /* KeychainConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainConfiguration.swift; sourceTree = "<group>"; };
 		1D9FB98224A3156300010370 /* KeychainPasswordItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainPasswordItem.swift; sourceTree = "<group>"; };
+		1DA8D86624BE17A00086A061 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		1DCD150C24B2F65F0078B26F /* ResetPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPayload.swift; sourceTree = "<group>"; };
+		1DE6173F24C9F1420052BDB8 /* ReservationRedeemPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationRedeemPayload.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +133,7 @@
 				1D7CFC3424A3C5210009AF5C /* ManualEntryViewController.swift */,
 				1D7CFC3624A3C53C0009AF5C /* ManualEntryViewController.xib */,
 				1D7CFC4224A5327A0009AF5C /* SessionEntriesTableViewController.swift */,
+				1DA8D86624BE17A00086A061 /* SettingsTableViewController.swift */,
 				1D7CFC4424A537F00009AF5C /* PayloadCell.swift */,
 			);
 			path = ViewControllers;
@@ -199,6 +204,7 @@
 				1D7818B324A5A32E0060881B /* SigninsPayload.swift */,
 				1D7818B524A5A3C50060881B /* SigninsResult.swift */,
 				1D9FB97524A2C4C900010370 /* InPersonSigninPayload.swift */,
+				1DE6173F24C9F1420052BDB8 /* ReservationRedeemPayload.swift */,
 				1D9FB97B24A3135800010370 /* LoginResponse.swift */,
 				1D7CFC4024A412560009AF5C /* ScanResult.swift */,
 			);
@@ -365,6 +371,7 @@
 				1D7CFC4524A537F00009AF5C /* PayloadCell.swift in Sources */,
 				1D9FB97424A2C14A00010370 /* CurrentSignins.swift in Sources */,
 				1D9FB97024A2BF9200010370 /* LoginPayload.swift in Sources */,
+				1DE6174024C9F1420052BDB8 /* ReservationRedeemPayload.swift in Sources */,
 				1D7CFC3F24A3F14E0009AF5C /* LogoutPayload.swift in Sources */,
 				1D9FB94324A2641800010370 /* ViewController.swift in Sources */,
 				1D9FB93F24A2641800010370 /* AppDelegate.swift in Sources */,
@@ -376,6 +383,7 @@
 				1D9FB97F24A3149A00010370 /* Keychain.swift in Sources */,
 				1D7818B424A5A32E0060881B /* SigninsPayload.swift in Sources */,
 				1D9FB98324A3156300010370 /* KeychainPasswordItem.swift in Sources */,
+				1DA8D86724BE17A00086A061 /* SettingsTableViewController.swift in Sources */,
 				1D80918B24A39EB0003FD6EC /* Storage.swift in Sources */,
 				1D8091A024A3B846003FD6EC /* ScannerViewController.swift in Sources */,
 				1D7CFC4324A5327A0009AF5C /* SessionEntriesTableViewController.swift in Sources */,

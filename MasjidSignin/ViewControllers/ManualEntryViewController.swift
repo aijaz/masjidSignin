@@ -29,7 +29,7 @@ class ManualEntryController: UIViewController {
     }
 
     @IBAction func handleAddEntry(_ sender: Any) {
-        guard let token = Keychain.read(field: .token) else {
+        guard let _ = Keychain.read(field: .token) else {
             alert(title: "You're not logged in.", message: "Please log in.")
             return
         }
@@ -40,13 +40,16 @@ class ManualEntryController: UIViewController {
         
         let scanTimeInSeconds = Date().timeIntervalSince1970
 
-        let inPersonPayload = InPersonSigninPayload(token: token
-            , name: name
+        let inPersonPayload = InPersonSigninPayload(name: name
             , phone: phone
             , email: emailField.text ?? ""
             , scanTime: scanTimeInSeconds
             , clientId: UUID().uuidString
+            , numPeople: 1
+            , maleOrFemale: "M"
         )
+        // TODO: Get numPeople from form
+        // TODO: Get morf from user defaults
 
         SessionEntries.add(payload: inPersonPayload)
         presenter!.refresh()

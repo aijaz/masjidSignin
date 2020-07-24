@@ -66,13 +66,15 @@ class ViewController: UIViewController {
             let name = array[1]
             let phone = array[2]
             let email = array[3]
-            let payload = InPersonSigninPayload(token: token
-                , name: name
+            let payload = InPersonSigninPayload(name: name
                 , phone: phone
                 , email: email
                 , scanTime: Date().timeIntervalSince1970
                 , clientId: UUID().uuidString
+                , numPeople: 1
+                , maleOrFemale: "M"
             )
+            // TODO: get morf from user defaults
 
             SessionEntries.add(payload: payload)
             refresh()
@@ -85,6 +87,14 @@ class ViewController: UIViewController {
                     }
                 }
             }
+        }
+        else if api == "3" {
+            if array.count != 2 {
+                alert(title: "Invalid code", message: "Wrong number of data items for API version \(api)")
+                return
+            }
+            let uuid = array[1]
+
         }
         else {
             alert(title: "Invalid Code", message: "Unknown API")
