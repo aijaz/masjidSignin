@@ -40,16 +40,17 @@ class ManualEntryController: UIViewController {
         
         let scanTimeInSeconds = Date().timeIntervalSince1970
 
+        let morf = UserDefaults.standard.string(forKey: "morf")
+
         let inPersonPayload = InPersonSigninPayload(name: name
             , phone: phone
             , email: emailField.text ?? ""
             , scanTime: scanTimeInSeconds
             , clientId: UUID().uuidString
             , numPeople: 1
-            , maleOrFemale: "M"
+            , maleOrFemale: morf
         )
         // TODO: Get numPeople from form
-        // TODO: Get morf from user defaults
 
         SessionEntries.add(payload: inPersonPayload)
         presenter!.refresh()

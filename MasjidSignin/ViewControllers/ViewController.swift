@@ -53,7 +53,7 @@ class ViewController: UIViewController {
             alert(title: "Invalid Code", message: "Too few data items")
             return
         }
-        guard let token = Keychain.read(field: .token) else {
+        guard let _ = Keychain.read(field: .token) else {
             alert(title: "You're not logged in", message: "You need to log in")
             return
         }
@@ -66,15 +66,16 @@ class ViewController: UIViewController {
             let name = array[1]
             let phone = array[2]
             let email = array[3]
+            let morf = UserDefaults.standard.string(forKey: "morf")
             let payload = InPersonSigninPayload(name: name
                 , phone: phone
                 , email: email
                 , scanTime: Date().timeIntervalSince1970
                 , clientId: UUID().uuidString
                 , numPeople: 1
-                , maleOrFemale: "M"
+                , maleOrFemale: morf
             )
-            // TODO: get morf from user defaults
+
 
             SessionEntries.add(payload: payload)
             refresh()

@@ -39,6 +39,11 @@
 		1DA8D86724BE17A00086A061 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA8D86624BE17A00086A061 /* SettingsTableViewController.swift */; };
 		1DCD150D24B2F65F0078B26F /* ResetPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCD150C24B2F65F0078B26F /* ResetPayload.swift */; };
 		1DE6174024C9F1420052BDB8 /* ReservationRedeemPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE6173F24C9F1420052BDB8 /* ReservationRedeemPayload.swift */; };
+		1DE6174224CA7B6E0052BDB8 /* SettingsActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE6174124CA7B6E0052BDB8 /* SettingsActionCell.swift */; };
+		1DE6174424CA7B8E0052BDB8 /* SettingsTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE6174324CA7B8E0052BDB8 /* SettingsTimeCell.swift */; };
+		1DE6174624CA7BB70052BDB8 /* SettingsServerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE6174524CA7BB70052BDB8 /* SettingsServerCell.swift */; };
+		1DE6174824CA7BE60052BDB8 /* SettingsMorfCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE6174724CA7BE60052BDB8 /* SettingsMorfCell.swift */; };
+		1DE6174A24CB09640052BDB8 /* ServerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE6174924CB09640052BDB8 /* ServerTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +101,11 @@
 		1DA8D86624BE17A00086A061 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		1DCD150C24B2F65F0078B26F /* ResetPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPayload.swift; sourceTree = "<group>"; };
 		1DE6173F24C9F1420052BDB8 /* ReservationRedeemPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationRedeemPayload.swift; sourceTree = "<group>"; };
+		1DE6174124CA7B6E0052BDB8 /* SettingsActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsActionCell.swift; sourceTree = "<group>"; };
+		1DE6174324CA7B8E0052BDB8 /* SettingsTimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTimeCell.swift; sourceTree = "<group>"; };
+		1DE6174524CA7BB70052BDB8 /* SettingsServerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsServerCell.swift; sourceTree = "<group>"; };
+		1DE6174724CA7BE60052BDB8 /* SettingsMorfCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsMorfCell.swift; sourceTree = "<group>"; };
+		1DE6174924CB09640052BDB8 /* ServerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,7 +144,12 @@
 				1D7CFC3624A3C53C0009AF5C /* ManualEntryViewController.xib */,
 				1D7CFC4224A5327A0009AF5C /* SessionEntriesTableViewController.swift */,
 				1DA8D86624BE17A00086A061 /* SettingsTableViewController.swift */,
+				1DE6174924CB09640052BDB8 /* ServerTableViewController.swift */,
 				1D7CFC4424A537F00009AF5C /* PayloadCell.swift */,
+				1DE6174124CA7B6E0052BDB8 /* SettingsActionCell.swift */,
+				1DE6174324CA7B8E0052BDB8 /* SettingsTimeCell.swift */,
+				1DE6174524CA7BB70052BDB8 /* SettingsServerCell.swift */,
+				1DE6174724CA7BE60052BDB8 /* SettingsMorfCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -377,15 +392,20 @@
 				1D9FB93F24A2641800010370 /* AppDelegate.swift in Sources */,
 				1D9FB98124A3153B00010370 /* KeychainConfiguration.swift in Sources */,
 				1D9FB94124A2641800010370 /* SceneDelegate.swift in Sources */,
+				1DE6174424CA7B8E0052BDB8 /* SettingsTimeCell.swift in Sources */,
 				1DCD150D24B2F65F0078B26F /* ResetPayload.swift in Sources */,
 				1D7818B624A5A3C50060881B /* SigninsResult.swift in Sources */,
+				1DE6174A24CB09640052BDB8 /* ServerTableViewController.swift in Sources */,
 				1D7CFC3524A3C5210009AF5C /* ManualEntryViewController.swift in Sources */,
 				1D9FB97F24A3149A00010370 /* Keychain.swift in Sources */,
 				1D7818B424A5A32E0060881B /* SigninsPayload.swift in Sources */,
 				1D9FB98324A3156300010370 /* KeychainPasswordItem.swift in Sources */,
 				1DA8D86724BE17A00086A061 /* SettingsTableViewController.swift in Sources */,
+				1DE6174624CA7BB70052BDB8 /* SettingsServerCell.swift in Sources */,
 				1D80918B24A39EB0003FD6EC /* Storage.swift in Sources */,
+				1DE6174824CA7BE60052BDB8 /* SettingsMorfCell.swift in Sources */,
 				1D8091A024A3B846003FD6EC /* ScannerViewController.swift in Sources */,
+				1DE6174224CA7B6E0052BDB8 /* SettingsActionCell.swift in Sources */,
 				1D7CFC4324A5327A0009AF5C /* SessionEntriesTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

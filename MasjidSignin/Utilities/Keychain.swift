@@ -70,7 +70,6 @@ struct Keychain {
             password = try passwordItem.readPassword()
         }
         catch {
-            os_log(.error, log: log, "Can't read value for field '%@' into keychain: %{public}@", account.rawValue, error.localizedDescription)
             password = nil
         }
         return password

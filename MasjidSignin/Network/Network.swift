@@ -32,10 +32,11 @@ enum NetworkError: Error {
 }
 
 struct Network {
-    let scheme = "http"
-    let host = "localhost"
-    let path = "/api/v1.0/"
-    let port:Int? = 5000
+
+    let scheme = UserDefaults.standard.string(forKey: "serverScheme") ?? ""
+    let host = UserDefaults.standard.string(forKey: "serverHost") ?? ""
+    let port = UserDefaults.standard.integer(forKey: "serverPort")
+    let path = UserDefaults.standard.string(forKey: "serverPath") ?? ""
 
 
     func loginWith(email: String
@@ -45,12 +46,7 @@ struct Network {
 
         let session = URLSession.shared
         var portString: String
-        if let port = port {
-            portString = ":\(port)"
-        }
-        else {
-            portString = ""
-        }
+        portString = ":\(port)"
         let url = URL(string: "\(scheme)://\(host)\(portString)\(path)login")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -120,12 +116,7 @@ struct Network {
 
     func getRequestFor(urlString: String, token: String, httpMethod: String = "POST") -> URLRequest {
         var portString: String
-        if let port = port {
-            portString = ":\(port)"
-        }
-        else {
-            portString = ""
-        }
+        portString = ":\(port)"
         let url = URL(string: "\(scheme)://\(host)\(portString)\(path)\(urlString)")!
 
         var request = URLRequest(url: url)
@@ -270,12 +261,7 @@ struct Network {
 
         let session = URLSession.shared
         var portString: String
-        if let port = port {
-            portString = ":\(port)"
-        }
-        else {
-            portString = ""
-        }
+        portString = ":\(port)"
         let url = URL(string: "\(scheme)://\(host)\(portString)\(path)verifyPasswordChange")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
