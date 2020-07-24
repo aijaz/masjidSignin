@@ -15,6 +15,7 @@ class ManualEntryController: UIViewController {
     @IBOutlet weak var phoneField: UITextField!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var addEntryButton: UIButton!
+    @IBOutlet weak var numPeopleSeg: UISegmentedControl!
 
     weak var presenter: ViewController?
 
@@ -41,18 +42,20 @@ class ManualEntryController: UIViewController {
         let scanTimeInSeconds = Date().timeIntervalSince1970
 
         let morf = UserDefaults.standard.string(forKey: "morf")
+        let numPeople = numPeopleSeg.selectedSegmentIndex + 1
 
         let inPersonPayload = InPersonSigninPayload(name: name
             , phone: phone
             , email: emailField.text ?? ""
             , scanTime: scanTimeInSeconds
             , clientId: UUID().uuidString
-            , numPeople: 1
+            , numPeople: numPeople
             , maleOrFemale: morf
         )
-        // TODO: Get numPeople from form
 
-        SessionEntries.add(payload: inPersonPayload)
+        for _ in (1...numPeople) {
+            SessionEntries.add(payload: inPersonPayload)
+        }
         presenter!.refresh()
 
         // submit payload
