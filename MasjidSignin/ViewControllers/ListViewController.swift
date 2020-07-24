@@ -97,6 +97,16 @@ extension ListViewController {
         cell.uuidLabel.text = ""
         cell.scanTimeLabel.text = formatter.string(from: Date(timeIntervalSince1970: item.epoch))
         cell.nLabel.text = "\(item.id)"
+        if item.morf == "F" {
+            cell.morfBg.backgroundColor = .systemPink
+            cell.morfLabel.text = item.morf
+        }
+        else {
+            cell.morfBg.backgroundColor = .systemTeal
+            cell.morfLabel.text = "M"
+        }
+        cell.morfBg.layer.cornerRadius = 12
+
         return cell
     }
 

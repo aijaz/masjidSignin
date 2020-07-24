@@ -16,6 +16,7 @@ struct SigninsResult: Codable {
         let name: String
         let phone: String
         let email: String
+        let morf: String
     }
 
     let data: [Item]

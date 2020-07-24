@@ -16,5 +16,7 @@ class PayloadCell: UITableViewCell {
     @IBOutlet weak var scanTimeLabel: UILabel!
     @IBOutlet weak var uuidLabel: UILabel!
     @IBOutlet weak var nLabel: UILabel!
+    @IBOutlet weak var morfLabel: UILabel!
+    @IBOutlet weak var morfBg: UIView!
     
 }

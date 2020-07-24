@@ -55,7 +55,17 @@ extension SessionEntriesTableViewController {
         cell.emailLabel.text = payload.email
         cell.uuidLabel.text = ""
         cell.scanTimeLabel.text = formatter.string(from: Date(timeIntervalSince1970: payload.scanTime))
-        cell.nLabel.text = "\(items.count - row)"
+        cell.nLabel.text = "\(100 + items.count - row)"
+        if payload.maleOrFemale == "F" {
+            cell.morfBg.backgroundColor = .systemPink
+            cell.morfLabel.text = payload.maleOrFemale
+        }
+        else {
+            cell.morfBg.backgroundColor = .systemTeal
+            cell.morfLabel.text = "M"
+        }
+        cell.morfBg.layer.cornerRadius = 12
+
         return cell
     }
 
