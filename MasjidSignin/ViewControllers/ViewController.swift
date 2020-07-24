@@ -121,9 +121,6 @@ class ViewController: UIViewController {
                 , numPeople: numPeople
                 , maleOrFemale: morf
             )
-            for _ in Range(1...numPeople) {
-                SessionEntries.add(payload: localPayload)
-            }
 
             refresh()
 
@@ -131,7 +128,12 @@ class ViewController: UIViewController {
             n.redeemReservation(payload: payload, localPayload: localPayload) { result, error in
                 if let error = error {
                     DispatchQueue.main.async {
-                        self.alert(title: error.appDescription(), message: "The record has been saved locally")
+                        switch error {
+                            case .otherError(let str):
+                                self.alert(title: "Error", message: str)
+                            default:
+                                self.alert(title: error.appDescription(), message: "The record has been saved locally")
+                        }
                     }
                 }
             }

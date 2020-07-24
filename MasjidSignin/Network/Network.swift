@@ -260,7 +260,10 @@ struct Network {
         let task = session.uploadTask(with: request, from: jsonData) { data, response, error in
 
             if let error = error {
-                for _ in Range (1...localPayload.numPeople) { FailedEntries.add(payload: localPayload) }
+                for _ in Range (1...localPayload.numPeople) {
+                    FailedEntries.add(payload: localPayload)
+                    SessionEntries.add(payload: localPayload)
+                }
                 callback(nil, NetworkError.serverError(error))
 
             }
@@ -283,7 +286,10 @@ struct Network {
                     callback(nil, NetworkError.otherError(errorPayload.message))
                 }
                 else {
-                    for _ in Range (1...localPayload.numPeople) { FailedEntries.add(payload: localPayload) }
+                    for _ in Range (1...localPayload.numPeople) {
+                        FailedEntries.add(payload: localPayload)
+                        SessionEntries.add(payload: localPayload)
+                    }
                     callback(nil, NetworkError.unauthorizedError)
                 }
 
@@ -292,7 +298,10 @@ struct Network {
                 let _ = self.handleScanResult(data: data, calling: callback)
             }
             else {
-                for _ in Range (1...localPayload.numPeople) { FailedEntries.add(payload: localPayload) }
+                for _ in Range (1...localPayload.numPeople) {
+                    FailedEntries.add(payload: localPayload)
+                    SessionEntries.add(payload: localPayload)
+                }
                 callback(nil, nil)
                 return
             }
