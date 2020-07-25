@@ -19,6 +19,19 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let morf = UserDefaults.standard.string(forKey: "morf")
+        if morf == "F" {
+            navigationItem.title = "Session Data - Sisters"
+        }
+        else {
+            navigationItem.title = "Session Data - Brothers"
+        }
+    }
+
+
+
     func refresh() {
         sessionEntriesTableViewController.refresh(all: listSegmentedControl.selectedSegmentIndex == 0)
         sessionEntriesTableViewController.tableView.reloadData()

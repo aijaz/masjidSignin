@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Local Data-->
+        <!--View Controller-->
         <scene sceneID="LnW-MH-Vg1">
             <objects>
                 <viewController id="0IP-X3-rwb" customClass="ViewController" customModule="MasjidSignin" customModuleProvider="target" sceneMemberID="viewController">
@@ -99,7 +99,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8SI-P1-qqW"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Local Data" id="R73-x7-YYh"/>
+                    <navigationItem key="navigationItem" id="R73-x7-YYh"/>
                     <connections>
                         <outlet property="listSegmentedControl" destination="AP1-kl-LcC" id="TuM-dF-b3h"/>
                     </connections>
