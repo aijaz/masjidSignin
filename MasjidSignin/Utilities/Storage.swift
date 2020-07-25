@@ -206,6 +206,21 @@ class SessionEntries {
         _ = SessionEntries.save()
     }
 
+    static func delete(clientId: String) {
+        // this is not an efficient delete, but that's ok. Most of the time, you'll be deleting the most recent element
+        _ = SessionEntries.read()
+
+
+        for i in (0..<items.count).reversed() {
+            if items[i].clientId == clientId {
+                items.remove(at: i)
+                _ = SessionEntries.save()
+                return
+            }
+        }
+
+    }
+
 
     static func read() -> [InPersonSigninPayload] {
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]

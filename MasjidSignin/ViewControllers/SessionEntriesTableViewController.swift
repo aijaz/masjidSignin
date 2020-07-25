@@ -69,4 +69,13 @@ extension SessionEntriesTableViewController {
         return cell
     }
 
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let payload = items[indexPath.row]
+            SessionEntries.delete(clientId: payload.clientId)
+            items.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+
 }
