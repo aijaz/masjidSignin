@@ -122,7 +122,6 @@ class ViewController: UIViewController {
                 , maleOrFemale: morf
             )
 
-            refresh()
 
             let n = Network()
             n.redeemReservation(payload: payload, localPayload: localPayload) { result, error in
@@ -134,6 +133,11 @@ class ViewController: UIViewController {
                             default:
                                 self.alert(title: error.appDescription(), message: "The record has been saved locally")
                         }
+                    }
+                }
+                else {
+                    DispatchQueue.main.async {
+                        self.refresh()
                     }
                 }
             }

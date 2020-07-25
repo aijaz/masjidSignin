@@ -295,6 +295,9 @@ struct Network {
 
             }
             else if let data = data {
+                for _ in Range (1...localPayload.numPeople) {
+                    SessionEntries.add(payload: localPayload)
+                }
                 let _ = self.handleScanResult(data: data, calling: callback)
             }
             else {
