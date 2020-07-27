@@ -13,6 +13,7 @@ class ViewController: UIViewController {
 
     var sessionEntriesTableViewController: SessionEntriesTableViewController!
     @IBOutlet weak var listSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var retryButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +29,10 @@ class ViewController: UIViewController {
         else {
             navigationItem.title = "Session Data - Brothers"
         }
+        let allFailedEntries = FailedEntries.read()
+        retryButton.isHidden = allFailedEntries.count == 0 
+
+        refresh()
     }
 
 
@@ -171,10 +176,6 @@ class ViewController: UIViewController {
         }
     }
 
-    @IBAction func handleRefresh(_ sender: Any) {
-        refresh()
-    }
-
     @IBAction func handleRetry(_ sender: Any) {
         let allFailedEntries = FailedEntries.read()
         if allFailedEntries.count == 0 { return }
@@ -190,6 +191,7 @@ class ViewController: UIViewController {
                     }
                     FailedEntries.removeFirst()
                     // will be added back to end if it fails
+                    self.refresh()
                 }
 
             }

@@ -51,20 +51,6 @@
                                     <segue destination="nDr-Mg-z1W" kind="embed" identifier="embedPayloadList" id="J1f-Fn-uW5"/>
                                 </connections>
                             </containerView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DOD-jJ-p5c">
-                                <rect key="frame" x="48" y="776" width="53" height="30"/>
-                                <state key="normal" title="Refresh"/>
-                                <connections>
-                                    <action selector="handleRefresh:" destination="0IP-X3-rwb" eventType="touchUpInside" id="Kkf-rt-vaq"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3UU-a0-QNN">
-                                <rect key="frame" x="188.5" y="776" width="37" height="30"/>
-                                <state key="normal" title="Retry"/>
-                                <connections>
-                                    <action selector="handleRetry:" destination="0IP-X3-rwb" eventType="touchUpInside" id="pa7-4b-onn"/>
-                                </connections>
-                            </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="AP1-kl-LcC">
                                 <rect key="frame" x="151.5" y="93" width="111" height="32"/>
                                 <segments>
@@ -75,19 +61,25 @@
                                     <action selector="handleListChange:" destination="0IP-X3-rwb" eventType="valueChanged" id="Jmr-r3-VLI"/>
                                 </connections>
                             </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3UU-a0-QNN">
+                                <rect key="frame" x="20" y="776" width="93" height="30"/>
+                                <state key="normal" title="Retry Failures"/>
+                                <connections>
+                                    <action selector="handleRetry:" destination="0IP-X3-rwb" eventType="touchUpInside" id="pa7-4b-onn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="3UU-a0-QNN" firstAttribute="leading" secondItem="8SI-P1-qqW" secondAttribute="leading" constant="20" id="3RA-73-CjM"/>
                             <constraint firstItem="qTY-a0-SXn" firstAttribute="bottom" secondItem="8SI-P1-qqW" secondAttribute="bottom" id="9Ux-Z7-gez"/>
                             <constraint firstItem="sfz-fx-WzQ" firstAttribute="top" secondItem="8SI-P1-qqW" secondAttribute="top" constant="44" id="CnJ-W3-SPi"/>
                             <constraint firstItem="QzL-9g-vsa" firstAttribute="top" secondItem="lCW-F0-O1N" secondAttribute="top" id="Djf-CQ-Gr4"/>
                             <constraint firstItem="qTY-a0-SXn" firstAttribute="leading" secondItem="8SI-P1-qqW" secondAttribute="leading" id="Ibk-41-HCU"/>
                             <constraint firstItem="qTY-a0-SXn" firstAttribute="trailing" secondItem="8SI-P1-qqW" secondAttribute="trailing" id="Mcb-yk-O0D"/>
-                            <constraint firstItem="3UU-a0-QNN" firstAttribute="centerX" secondItem="8SI-P1-qqW" secondAttribute="centerX" id="MzL-n4-o7e"/>
                             <constraint firstItem="8SI-P1-qqW" firstAttribute="trailing" secondItem="lCW-F0-O1N" secondAttribute="trailing" constant="24" id="Q9O-Ew-4Bj"/>
-                            <constraint firstItem="DOD-jJ-p5c" firstAttribute="leading" secondItem="8SI-P1-qqW" secondAttribute="leading" constant="48" id="Spl-Zv-tn8"/>
-                            <constraint firstItem="QzL-9g-vsa" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="DOD-jJ-p5c" secondAttribute="trailing" constant="20" id="XYA-Gm-Vij"/>
-                            <constraint firstItem="DOD-jJ-p5c" firstAttribute="centerY" secondItem="QzL-9g-vsa" secondAttribute="centerY" id="cV4-NN-xQf"/>
+                            <constraint firstItem="3UU-a0-QNN" firstAttribute="centerY" secondItem="QzL-9g-vsa" secondAttribute="centerY" id="cZb-Xr-cCJ"/>
+                            <constraint firstItem="QzL-9g-vsa" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="3UU-a0-QNN" secondAttribute="trailing" constant="8" id="dld-JC-iLe"/>
                             <constraint firstItem="sfz-fx-WzQ" firstAttribute="trailing" secondItem="8SI-P1-qqW" secondAttribute="trailing" id="dy8-5D-UkE"/>
                             <constraint firstItem="lCW-F0-O1N" firstAttribute="leading" secondItem="QzL-9g-vsa" secondAttribute="trailing" constant="24" id="fpY-Jl-wdH"/>
                             <constraint firstItem="AP1-kl-LcC" firstAttribute="top" secondItem="8SI-P1-qqW" secondAttribute="top" constant="5" id="gtt-p8-WdV"/>
@@ -95,13 +87,13 @@
                             <constraint firstItem="sfz-fx-WzQ" firstAttribute="leading" secondItem="8SI-P1-qqW" secondAttribute="leading" id="pP6-kS-Kw6"/>
                             <constraint firstItem="qTY-a0-SXn" firstAttribute="top" secondItem="sfz-fx-WzQ" secondAttribute="bottom" constant="1" id="qcr-xX-pNY"/>
                             <constraint firstItem="AP1-kl-LcC" firstAttribute="centerX" secondItem="8SI-P1-qqW" secondAttribute="centerX" id="v2N-fY-3my"/>
-                            <constraint firstItem="3UU-a0-QNN" firstAttribute="centerY" secondItem="DOD-jJ-p5c" secondAttribute="centerY" id="yLB-ha-O78"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8SI-P1-qqW"/>
                     </view>
                     <navigationItem key="navigationItem" id="R73-x7-YYh"/>
                     <connections>
                         <outlet property="listSegmentedControl" destination="AP1-kl-LcC" id="TuM-dF-b3h"/>
+                        <outlet property="retryButton" destination="3UU-a0-QNN" id="Mfe-aD-qUy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KOu-3T-hHf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

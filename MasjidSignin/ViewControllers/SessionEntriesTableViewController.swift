@@ -18,6 +18,7 @@ class SessionEntriesTableViewController: UITableViewController {
         formatter.dateFormat = "MM/dd/yyyy HH:mm"
     }
 
+
     func refresh(all: Bool) {
         let startDate = UserDefaults.standard.object(forKey: "sessionStartDate") as? Date ?? Date(timeIntervalSince1970: 0)
         let endDate = UserDefaults.standard.object(forKey: "sessionEndDate") as? Date ?? Date()

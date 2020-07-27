@@ -35,13 +35,32 @@ enum NetworkError: Error {
     }
 }
 
+
 struct Network {
 
-    let scheme = UserDefaults.standard.string(forKey: "serverScheme") ?? ""
-    let host = UserDefaults.standard.string(forKey: "serverHost") ?? ""
-    let port = UserDefaults.standard.integer(forKey: "serverPort")
-    let path = UserDefaults.standard.string(forKey: "serverPath") ?? ""
 
+    let host: String
+    let scheme: String
+    var port: Int?
+    let path: String
+
+    init() {
+        host = UserDefaults.standard.string(forKey: "serverHost") ?? ""
+        if host == "localhost" {
+            scheme = "http"
+            port = 5000
+        }
+        else {
+            scheme = "https"
+            port = nil
+        }
+        path = "/api/v1.0/"
+    }
+
+    func getPortString() -> String {
+        guard let port = port else { return "" }
+        return ":\(port)"
+    }
 
     func loginWith(email: String
         , password: String
@@ -49,8 +68,7 @@ struct Network {
     ) {
 
         let session = URLSession.shared
-        var portString: String
-        portString = ":\(port)"
+        let portString = getPortString()
         let url = URL(string: "\(scheme)://\(host)\(portString)\(path)login")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -119,8 +137,7 @@ struct Network {
     }
 
     func getRequestFor(urlString: String, token: String, httpMethod: String = "POST") -> URLRequest {
-        var portString: String
-        portString = ":\(port)"
+        let portString = getPortString()
         let url = URL(string: "\(scheme)://\(host)\(portString)\(path)\(urlString)")!
 
         var request = URLRequest(url: url)
@@ -338,8 +355,7 @@ struct Network {
     ) {
 
         let session = URLSession.shared
-        var portString: String
-        portString = ":\(port)"
+        let portString = getPortString()
         let url = URL(string: "\(scheme)://\(host)\(portString)\(path)verifyPasswordChange")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"

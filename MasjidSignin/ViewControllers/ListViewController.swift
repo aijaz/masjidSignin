@@ -39,7 +39,7 @@ class ListViewController: UITableViewController {
             }
             else if let error = error {
                 DispatchQueue.main.async {
-                    self.refreshControl?.endRefreshing()
+                    self.rc.endRefreshing()
                     self.alert(title: "ERROR", message: error.appDescription())
                 }
             }
